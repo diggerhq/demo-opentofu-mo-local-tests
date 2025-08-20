@@ -33,7 +33,7 @@ jobs:
           api-key: ${{ secrets.INFRACOST_API_KEY }}      
 
       - name: digger
-        uses: diggerhq/digger@feat/local-dev-support
+        uses: diggerhq/digger@fix/remove-cli-cache
         with:
           digger-spec: ${{ inputs.spec }}
           digger-private-key: ${{ secrets.DIGGER_PRIVATE_KEY }}
@@ -41,8 +41,9 @@ jobs:
           disable-locking: true
           setup-opentofu: true
           setup-terraform: true
-          local-dev-mode: true
-          local-dev-cli-path: /Users/mohamedsayed/dev/digger/digger/cli
+          cache-dependencies: true
+          # local-dev-mode: true
+          # local-dev-cli-path: /Users/mohamedsayed/dev/digger/digger/cli
         env:
           GITHUB_CONTEXT: ${{ toJson(github) }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
