@@ -41,7 +41,8 @@ jobs:
           disable-locking: true
           setup-opentofu: true
           setup-terraform: true
-          cache-dependencies: true
+          # cache-dependencies: true
+          terraform-cache-dir: ${{github.workspace}}/cache2
           # local-dev-mode: true
           # local-dev-cli-path: /Users/mohamedsayed/dev/digger/digger/cli
         env:
