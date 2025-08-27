@@ -33,7 +33,7 @@ jobs:
           api-key: ${{ secrets.INFRACOST_API_KEY }}      
 
       - name: digger
-        uses: diggerhq/digger@feat/local-dev-support
+        uses: diggerhq/digger@feat/breardon2011/s3-cache
         with:
           digger-spec: ${{ inputs.spec }}
           digger-private-key: ${{ secrets.DIGGER_PRIVATE_KEY }}
@@ -45,6 +45,7 @@ jobs:
           local-dev-cli-path: /Users/mohamedsayed/dev/digger/digger/cli
           cache-dependencies-s3: true
           cache-dependencies-s3-bucket: s3://terraform-cache-1756318349465/cache
+          cache-dependencies-s3-region: us-east-1
         env:
           GITHUB_CONTEXT: ${{ toJson(github) }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
