@@ -37,8 +37,8 @@ jobs:
         with:
           digger-spec: ${{ inputs.spec }}
           setup-aws: true
-          setup-opentofu: true
-          #setup-terraform: true
+          # setup-opentofu: true
+          setup-terraform: true
           upload-plan-destination: 'aws'
           upload-plan-destination-s3-bucket: terraform-cache-1756318349465
           #local-dev-mode: true
